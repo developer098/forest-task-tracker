@@ -1,4 +1,4 @@
 
 /.idea/
-/forest-task-tracker.iml
+*.iml
 /target/
