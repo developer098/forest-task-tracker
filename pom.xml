@@ -79,7 +79,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <webResources>
                         <resource>
-                            <directory>src/main/webapp/build/production/ForestTaskTraker</directory>
+                            <directory>src/main/webapp/build/production/ForestTaskTracker</directory>
                             <targetPath>/</targetPath>
                         </resource>
                     </webResources>
