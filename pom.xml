@@ -77,9 +77,52 @@
                 <version>2.6</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp/build/production/ForestTaskTraker</directory>
+                            <targetPath>/</targetPath>
+                        </resource>
+                    </webResources>
+                    <packagingExcludes>
+                        .sencha/**,
+                        app/**,
+                        build/**,
+                        ext/**,
+                        sass/**,
+                        overrides/**,
+                        packages/**,
+                        app.js,
+                        app.json,
+                        bootstrap.css,
+                        bootstrap.js,
+                        build.xml,
+                        workspace.json
+                    </packagingExcludes>
                 </configuration>
-            </plugin></plugins>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <id>sencha-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>sencha</executable>
+                            <arguments>
+                                <argument>app</argument>
+                                <argument>build</argument>
+                                <argument>production</argument>
+                            </arguments>
+                            <workingDirectory>${basedir}/src/main/webapp</workingDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
-
-
 </project>

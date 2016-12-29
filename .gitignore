@@ -2,3 +2,6 @@
 /.idea/
 *.iml
 /target/
+/src/main/webapp/ext/*
+/src/main/webapp/build/*
+!/src/main/webapp/ext/Readme.md
