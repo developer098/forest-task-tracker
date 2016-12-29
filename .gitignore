@@ -5,3 +5,10 @@
 /src/main/webapp/ext/*
 /src/main/webapp/build/*
 !/src/main/webapp/ext/Readme.md
+/src/main/webapp/classic.jsonp
+/src/main/webapp/classic.json
+/src/main/webapp/modern.jsonp
+/src/main/webapp/modern.json
+/src/main/webapp/sass/example/bootstrap.jsonp
+/src/main/webapp/sass/example/bootstrap.json
+/src/main/webapp/sass/example/example.css
