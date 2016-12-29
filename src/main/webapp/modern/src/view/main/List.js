@@ -6,19 +6,18 @@ Ext.define('ForestTaskTracker.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'ForestTaskTracker.store.Personnel'
+        'ForestTaskTracker.store.ForestTasks'
     ],
 
-    title: 'Personnel',
+    title: 'Tasks',
 
     store: {
-        type: 'personnel'
+        type: 'foresttasks'
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name', width: 100 },
-        { text: 'Email', dataIndex: 'email', width: 230 },
-        { text: 'Phone', dataIndex: 'phone', width: 150 }
+        { text: 'ID',  dataIndex: 'id', width: 100 },
+        { text: 'Description', dataIndex: 'description', width: 230 }
     ],
 
     listeners: {

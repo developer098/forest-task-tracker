@@ -4,23 +4,17 @@
 Ext.define('ForestTaskTracker.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
-
     requires: [
-        'ForestTaskTracker.store.Personnel'
+        'ForestTaskTracker.store.ForestTasks'
     ],
-
-    title: 'Personnel',
-
+    title: 'Tasks',
     store: {
-        type: 'personnel'
+        type: 'foresttasks'
     },
-
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: 'ID',  dataIndex: 'id' },
+        { text: 'Description', dataIndex: 'description', flex: 1 }
     ],
-
     listeners: {
         select: 'onItemSelected'
     }
