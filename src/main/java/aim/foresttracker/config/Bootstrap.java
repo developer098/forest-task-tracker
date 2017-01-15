@@ -1,5 +1,6 @@
 package aim.foresttracker.config;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -12,6 +13,7 @@ import javax.servlet.ServletRegistration;
 /**
  *
  */
+@Order(1)
 public class Bootstrap implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
