@@ -7,7 +7,7 @@ Ext.define('ForestTaskTracker.store.ForestTasks', {
     model: 'ForestTaskTracker.model.ForestTask',
     proxy: {
         type: 'ajax',
-        url:'/ftasks',
+        url:'rest/ftasks.json',
         reader: {
             type: 'json'
         }
