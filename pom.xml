@@ -112,29 +112,42 @@
                     </packagingExcludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.5.0</version>
-                <executions>
-                    <execution>
-                        <id>sencha-compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>sencha</executable>
-                            <arguments>
-                                <argument>app</argument>
-                                <argument>build</argument>
-                                <argument>production</argument>
-                            </arguments>
-                            <workingDirectory>${basedir}/src/main/webapp</workingDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>production</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>sencha-compile</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>sencha</executable>
+                                    <arguments>
+                                        <argument>app</argument>
+                                        <argument>build</argument>
+                                        <argument>production</argument>
+                                        <!--<argument>classic</argument>-->
+                                    </arguments>
+                                    <workingDirectory>${basedir}/src/main/webapp</workingDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
