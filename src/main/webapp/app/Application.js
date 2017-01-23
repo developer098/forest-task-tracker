@@ -13,8 +13,18 @@ Ext.define('ForestTaskTracker.Application', {
     ],
     
     launch: function () {
-        // TODO - Launch the application
+        // It's important to note that this type of application could use
+        // any type of storage, i.e., Cookies, LocalStorage, etc.
+        var loggedIn = localStorage.getItem("ForestTaskLoggedIn");
+        Ext.create({
+           xtype: loggedIn ? 'app-main' : 'login'
+        });
     },
+
+    views: [
+        'ForestTaskTracker.view.main.Main',
+        'ForestTaskTracker.view.login.Login'
+    ],
 
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',

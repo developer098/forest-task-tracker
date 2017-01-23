@@ -20,6 +20,7 @@ Ext.define('ForestTaskTracker.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
+    plugins: 'viewport',
 
     ui: 'navigation',
 
@@ -37,7 +38,13 @@ Ext.define('ForestTaskTracker.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-th-list',
+        items: [{
+            xtype: 'button',
+            text: 'Logout',
+            margin: '10 0',
+            handler: 'onLogoutButton'
+        }]
     },
 
     tabBar: {
