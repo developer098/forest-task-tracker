@@ -20,13 +20,8 @@ Ext.define('ForestTaskTracker.view.main.MainController', {
     },
 
     onLogoutButton: function () {
-        // Remove the localStorage key/value
         localStorage.removeItem('ForestTaskLoggedIn');
-
-        // Remove Main View
         this.getView().destroy();
-
-        // Add the Login Window
         Ext.create({
             xtype: 'login'
         });

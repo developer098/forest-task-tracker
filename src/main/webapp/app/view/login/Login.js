@@ -4,41 +4,35 @@ Ext.define('ForestTaskTracker.view.login.Login', {
 
     requires: [
         'Ext.form.Panel',
-
         'ForestTaskTracker.view.login.LoginController'
     ],
 
     controller: 'login',
     bodyPadding: 10,
-    title: 'Login Window',
+    title: 'Вход',
     closable: false,
     autoShow: true,
-
     items: {
-            xtype: 'form',
-            reference: 'form',
-            items: [{
-                xtype: 'textfield',
-                name: 'username',
-                fieldLabel: 'Имя',
-                allowBlank: false
-            }, {
-                xtype: 'textfield',
-                name: 'password',
-                inputType: 'password',
-                fieldLabel: 'Пароль',
-                allowBlank: false
-            }, {
-                xtype: 'displayfield',
-                hideEmptyLabel: false,
-                value: 'Enter any non-blank password'
-            }],
-            buttons: [{
-                text: 'Login',
-                formBind: true,
-                listeners: {
-                    click: 'onLoginClick'
-                }
-            }]
-        }
+        xtype: 'form',
+        reference: 'form',
+        items: [{
+            xtype: 'textfield',
+            name: 'username',
+            fieldLabel: 'Имя',
+            allowBlank: false
+        }, {
+            xtype: 'textfield',
+            name: 'password',
+            inputType: 'password',
+            fieldLabel: 'Пароль',
+            allowBlank: false
+        }],
+        buttons: [{
+            text: 'Login',
+            formBind: true,
+            listeners: {
+                click: 'onLoginClick'
+            }
+        }]
+    }
 });
