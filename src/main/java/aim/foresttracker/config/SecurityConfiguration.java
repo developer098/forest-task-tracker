@@ -27,11 +27,27 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorities("USER", "ADMIN");
     }
 
+//        @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//                .httpBasic().and()
+//                .authorizeRequests()
+//                .anyRequest().authenticated();
+//    }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .httpBasic().and()
-                .authorizeRequests()
-                .anyRequest().authenticated();
+            .authorizeRequests()
+                .antMatchers("/", "/home.html").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .formLogin()
+                .loginPage("/login.html")
+                .permitAll()
+            .and()
+            .logout()
+                .permitAll()
+            .and()
+                .csrf().disable();
     }
 }

@@ -20,7 +20,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 class ServletContextConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/index.html");
+//        registry.addViewController("/").setViewName("forward:/index.html");
+        registry.addViewController("/home").setViewName("home");
+        registry.addViewController("/").setViewName("home");
+        registry.addViewController("/hello").setViewName("hello");
+        registry.addViewController("/login").setViewName("login");
     }
 
     @Override
