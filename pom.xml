@@ -138,8 +138,8 @@
                                     <arguments>
                                         <argument>app</argument>
                                         <argument>build</argument>
+                                        <argument>classic</argument>
                                         <argument>production</argument>
-                                        <!--<argument>classic</argument>-->
                                     </arguments>
                                     <workingDirectory>${basedir}/src/main/webapp</workingDirectory>
                                 </configuration>
